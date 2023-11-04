@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 500px;
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #c9d1d9;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        form label {
+            color: #c9d1d9;
+            display: block;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="date"],
+        form input[type="email"],
+        form input[type="file"] {
+            color: #c9d1d9;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        form input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        form input[type="submit"] {
+            background-color: #2ea44f;
+            color: #ffffff;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        span[type="radioButton"] {
+            color: #c9d1d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Інформація про абітурієнта</h2>
+        <form action="insert.php" method="POST" enctype="multipart/form-data">
+            <label for="LastName">Прізвище:</label>
+            <input type="text" name="LastName" id="LastName" required>
+            
+            <label for="FirstName">Ім'я:</label>
+            <input type="text" name="FirstName" id="FirstName" required>
+            
+            <label for="MiddleName">По-батькові:</label>
+            <input type="text" name="MiddleName" id="MiddleName">
+            
+            <label for="DateOfBirth">Дата народження:</label>
+            <input type="date" name="DateOfBirth" id="DateOfBirth">
+            
+            <label for="Address">Адреса:</label>
+            <input type="text" name="Address" id="Address">
+            
+            <label for="PhoneNumber">Номер телефону:</label>
+            <input type="text" name="PhoneNumber" id="PhoneNumber">
+            
+            <label for="Email">Email:</label>
+            <input type="email" name="Email" id="Email">
+            
+            <label for="Gender">Стать:</label>
+            <input type="radio" name="Gender" id="GenderMale" value="Male"> <span type="radioButton">Male</span>
+            <input type="radio" name="Gender" id="GenderFemale" value="Female"> <span type="radioButton">Female</span>
+            
+            <label for="Nationality">Національність:</label>
+            <input type="text" name="Nationality" id="Nationality">
+            
+            <label for="Photo">Фото (BLOB):</label>
+            <input type="file" name="Photo" id="Photo">
+            
+            <input type="submit" value="Подати документи">
+        </form>
+    </div>
+</body>
+</html>
